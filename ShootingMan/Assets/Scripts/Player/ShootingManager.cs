@@ -6,19 +6,20 @@ public class ShootingManager : MonoBehaviour
 {
     public static int ShootingCounter;
     [SerializeField] NewSave _newsave;
-    public BulletData _bulletData;
+    //public BulletData _bulletData;
     [SerializeField] Bullet _bulletPrefab;
     public Transform SpawnPoint;
     float TimeInterval;
     [SerializeField] private int damage = 1;
     private float Starttime;
     private float AnimationDuration = 2f;
-  
+
     [SerializeField]
     private ParticleSystem Muzzle;
+    [SerializeField] Transform _enemy = default;
 
     private void Start()
-    {       
+    {
         Starttime = Time.time;
         HealthManager.killedEnemy = 0;
     }
@@ -30,10 +31,8 @@ public class ShootingManager : MonoBehaviour
         }
         if (HealthManager.killedEnemy == GetComponent<Spawner>().TotalEnemy)
         {
-            
             var statusUpdate = GetComponent<UIManager>();
             statusUpdate.UpdateGameStatuswin();
-          
             return;
         }
         // ones per in seconds
@@ -41,33 +40,34 @@ public class ShootingManager : MonoBehaviour
         if (TimeInterval >= .3f)
         {
             TimeInterval = 0;
-            SpawnBullet(_bulletPrefab);           
+            SpawnBullet(_bulletPrefab);
         }
     }
-   void SpawnBullet(Bullet bullet)
-    {       
+    void SpawnBullet(Bullet bullet)
+    {
         Debug.DrawRay(SpawnPoint.position, SpawnPoint.forward * 100, Color.red, 2f);
         Ray ray = new Ray(SpawnPoint.position, SpawnPoint.forward);
         RaycastHit hitinfo;
-        if (Physics.Raycast(ray, out hitinfo, 20,9))
+        if (Physics.Raycast(ray, out hitinfo, 20, 9))
         {
             ShootingCounter++;
             var ShootingCounterUpdate = GetComponent<UIManager>();
             ShootingCounterUpdate.UpdateShooterCount();
             _newsave.Save();
             SpawnPoint.position = new Vector3(SpawnPoint.position.x, 1, SpawnPoint.position.z);
-            var _bullet = Instantiate(_bulletPrefab, SpawnPoint.position,Quaternion.identity);            
-            _bullet.Shooting(transform.forward);
+            var _bullet = Instantiate(_bulletPrefab, SpawnPoint.position, Quaternion.identity);
+            // _bullet.Shooting(transform.forward);
+            // _bullet.Shooting();
 
-           
+
             Muzzle.Play();
             SoundManager.instance.Shoot();
-            var health=hitinfo.collider.GetComponent<HealthManager>();
-            if (health!=null)
+            var health = hitinfo.collider.GetComponent<HealthManager>();
+            if (health != null)
             {
                 health.DamageTaken(damage);
             }
-           
+
         }
     }
 }

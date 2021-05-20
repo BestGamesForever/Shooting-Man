@@ -1,30 +1,36 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Bullet : MonoBehaviour
-{
-   
-    public BulletData _bulletData;
+{  
     private void Start()
     {
         Destroy(gameObject, 5);
-    }
+    }   
 
-    
-  public void Shooting(Vector3 direction)
+    public void Shooting(Vector3 direction)
     {
-        direction.Normalize();
-       transform.forward = direction;
-        GetComponent<Rigidbody>().velocity = direction * _bulletData.Speed;
-
+        //  direction.Normalize();
+        //  transform.forward = direction;      
+        //  GetComponent<Rigidbody>().velocity = direction * _bulletData.Speed;
     }
-
-    private void OnTriggerEnter(Collider other)
+    private void FixedUpdate()
     {
-        if (other.gameObject.tag=="Enemy")
+        var nearestEnemy = EnemyTransform.FindClosestEnemy(transform.position);
+        if (nearestEnemy != null)
+        {            
+            transform.LookAt(nearestEnemy.transform);          
+            transform.position = Vector3.MoveTowards(transform.position, nearestEnemy.transform.position + new Vector3(0, 1f, 0), 30 * Time.deltaTime);
+        }
+        else
         {
-             Destroy(gameObject);
-        } 
+            Destroy(gameObject);
+        }
     }
+   
+   
+   
+   
+   
+   
+   
 }

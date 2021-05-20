@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/ShootingMan.unity
     guid: e7d3496610bfcc94fa06593dfb50d2a1
   m_configObjects: {}

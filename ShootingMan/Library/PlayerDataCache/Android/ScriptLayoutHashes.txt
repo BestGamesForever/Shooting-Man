@@ -2,7 +2,7 @@ Android
 PlayerPath?
 C:/Users/derya can/Desktop/ShootingMan.apk
 SceneListBegin?
-Assets/Scenes/SampleScene.unity
+Assets/Scenes/ShootingMan.unity
 SceneListEnd?
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.CamController
 3c08375166df118bd1801438fc36b92f Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
@@ -116,15 +116,17 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-5a135be80f8f257caa7d9ee107039734 Assembly-CSharp.dll:.EnemyData
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.EnemyData
 431505c64b3a80d1e719bddc723d168a Assembly-CSharp.dll:.SoundManager
 b8a5e8091ab0b8861d2add371082c5e0 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.EnemyAI
 15ad811c2bb08cbc0c3afe35b54aa17f Assembly-CSharp.dll:.SpawnManagerScriptableObject
 cd44bc4bf06e62d46ea21e0e170bc6ec Assembly-CSharp.dll:.HealthManager
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.NewSave
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
+ff3458aad85bfe5f7a1b696279fbee2e Assembly-CSharp.dll:.MoveCharacterSidewayWithTouchcontrol
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
-d1a2470ee32e72bd9c680ba66bf9422c Assembly-CSharp.dll:.PlayerController
+618168a5cb959b6013cd8bf64ca42fc7 Assembly-CSharp.dll:.PlayerController
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 3b87be7e51bf9dd0b297b047a9bc7113 Assembly-CSharp.dll:.Spawner
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -141,7 +143,7 @@ e0ee4b3d4e27318934cc940a969d3d96 UnityEngine.Networking.dll:UnityEngine.Networki
 ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
-085ab8cbce60328cddc4f6cf48904240 Assembly-CSharp.dll:.ShootingManager
+247b5121f4480175b0ed5100bf846bd9 Assembly-CSharp.dll:.ShootingManager
 4cc46d72cc0228067431ab46e5753535 Assembly-CSharp.dll:.GameEvents
 35a9693c388776aaf487636491a20f11 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 e1300922cc039f41ab46a47f4cb05898 Unity.TextMeshPro.dll:TMPro.TMP_Settings
@@ -165,11 +167,11 @@ cfcff58193432939670fb1d1debc9d87 Assembly-CSharp.dll:.BulletData
 507174d46dacbc5fe45e28485db5dd1e Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
 60894d7737d373043454eb67b12a9fd2 Assembly-CSharp.dll:.Bullet
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-512e938ba84ef59ddd7a4685b94ea312 Assembly-CSharp.dll:.UIManager
+55d96bd4e66e02c6a2e1e4c778849a4d Assembly-CSharp.dll:.UIManager
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 df434544c9f7b33d1cc7e635b180d279 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.EnemyMeshFollow
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
-202012604b843a1d343eceff6386ae38 Assembly-CSharp.dll:.EnemyMovement
+b80ccfb78a7a20f1341feb3243d16df5 Assembly-CSharp.dll:.EnemyMovement
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PlayerTransform

@@ -42,13 +42,8 @@ public class CamController : MonoBehaviour {
         {
             isCameraAnimating = true;
             transform.position = Vector3.Lerp(Movevector+AnimationOffset, Movevector, Transition);
-           
-
-
             Transition += Time.deltaTime * 1 / AnimationDuration;
             transform.LookAt (Player.position + Vector3.right);
-        }
-
-       
+        }      
 	}
 }
