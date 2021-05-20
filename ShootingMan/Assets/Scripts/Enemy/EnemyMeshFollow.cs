@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyMeshFollow : MonoBehaviour
@@ -12,7 +10,7 @@ public class EnemyMeshFollow : MonoBehaviour
 
     private void Awake()
     {
-        //subsctribe the action
+        //subscribe the action
         _enemyAi = GetComponent<EnemyAI>();
         _enemyAi.OnEnemyMesh += _enemyAi_OnEnemyMesh;
     }

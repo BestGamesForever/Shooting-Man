@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,19 +12,27 @@ public class UIManager : MonoBehaviour
     [SerializeField] SpawnManagerScriptableObject spawnScriptable;
 
     [Header("countdown Vars")]
-    [SerializeField] Text CountDowntxt;
-    [SerializeField] RectTransform Panel;
+    [SerializeField] Text CountDowntxt = default;
+    [SerializeField] RectTransform Panel = default;
     float timer;
     float TimeInterval;
 
     [Header("GameStatus")]
-    [SerializeField] RectTransform gameoverPanel;
-    [SerializeField] RectTransform winPanel;
+    [SerializeField] RectTransform gameoverPanel = default;
+    [SerializeField] RectTransform winPanel=default;
 
     [Header("save")]
     [SerializeField] Text ShootinCountertxt;
     [SerializeField] NewSave _newSave;
-
+    private void Awake()
+    {
+      if (File.Exists(Application.persistentDataPath+"/save.txt"))
+      {         
+          _newSave.Load();
+          ShootinCountertxt.text = "Total Shhoting For now : " + ShootingManager.ShootingCounter.ToString();
+      }
+       
+    }
     private void OnEnable()
     {
         events.EnemyCountUpdate += UpdateEnemyCount;
@@ -41,13 +50,11 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         UpdateEnemyCount();
-        timer = 2;
-        _newSave.Load();
-        ShootinCountertxt.text ="Total Shhoting For now : "+ShootingManager.ShootingCounter.ToString();
+        timer = 2;  
+      
     }
     private void Update()
-    {
-       
+    {       
         timer -= Time.deltaTime;
         CountDowntxt.text = timer.ToString("0");      
               

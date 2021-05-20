@@ -5,16 +5,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static CharacterController controller;
-    private const float Turn_speed = 0.7f;
+   
 
     public PlayerSlower[] playerSlower;
     public float PlayerSpeed;
-    private bool isDead = false;
+    [Range(.5f, 1.5f)]
+    [SerializeField] float SlowAnount;
     private float Starttime;
     Vector3 direction;
-    Vector3 MoveVector;
-
-    Vector2 startTouchPosition, endTouchPosition;
+    Vector3 MoveVector;   
     private bool moveRight, moveLeft;
     private float AnimationDuration = 2.5f;
 
@@ -24,15 +23,14 @@ public class PlayerController : MonoBehaviour
         {
             playerSlower[i].OnHitWall += PlayerSlower_OnHitWall;
         }
-        
+
     }
 
     private void PlayerSlower_OnHitWall(float obj)
     {
-        obj = .5f;
+        obj = SlowAnount;
         PlayerSpeed -= obj;
-        StartCoroutine(SpeedBack());
-        Debug.Log("PlayerSpeed" + PlayerSpeed);
+        StartCoroutine(SpeedBack());       
     }
     IEnumerator SpeedBack()
     {
@@ -55,7 +53,7 @@ public class PlayerController : MonoBehaviour
             controller.Move(Vector3.forward * -PlayerSpeed * Time.deltaTime);
             return;
         }
-       
+
         //Touch The Left Side Of Screen
         if (TouchScreen.isLeft)
         {
@@ -76,8 +74,18 @@ public class PlayerController : MonoBehaviour
         MoveVector.x = (direction - transform.position).x * PlayerSpeed * 1.5f;
         MoveVector.y = 0;
         MoveVector.z = -PlayerSpeed;
-        controller.Move(MoveVector * Time.deltaTime);       
+        controller.Move(MoveVector * Time.deltaTime);
     }  //finish update     
 }
+
+        //  private void OnControllerColliderHit(ControllerColliderHit hit)
+        //  {
+        //      if (hit.point.z > transform.position.z + controller.radius && hit.normal.y < 0.2 && (hit.gameObject.tag == "Zombie"))
+        //      {            
+        //          Handheld.Vibrate();
+        //      }
+        //  }
+    
+
 
 

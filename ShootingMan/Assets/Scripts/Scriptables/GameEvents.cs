@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ public class GameEvents : ScriptableObject
 
     public delegate void UpdateShooterCount();
     public UpdateShooterCount updateShooterCount = null;
+
+   
 
     [HideInInspector]
     public int CurrentScore = 0;

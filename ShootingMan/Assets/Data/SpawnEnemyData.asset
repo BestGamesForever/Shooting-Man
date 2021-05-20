@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabName: Enemy
   numberOfPrefabsToCreate: 4
-  numberOfTotalPrefabs: 31
+  numberOfTotalPrefabs: 20
   Speed: 6
   spawnPoints:
   - {x: -3, y: 0, z: 85}

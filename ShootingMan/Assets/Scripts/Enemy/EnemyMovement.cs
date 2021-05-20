@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
-{
+{  
     //Simple Enemy Movement Forward until they see the Player
     private Rigidbody Rb;
     public SpawnManagerScriptableObject _enemydata;
-    public int _speed;
-
+    public int _speed;   
+   
     private void Start()
     {
         Rb = GetComponent<Rigidbody>();
@@ -32,3 +30,6 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 }
+
+   
+

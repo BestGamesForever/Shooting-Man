@@ -20,9 +20,7 @@ public class HealthManager : MonoBehaviour
         {
             gameObject.SetActive(false);
             //We increase the killed enemies one by one to know if there any left behind and finish the game.
-            killedEnemy++;
-            Debug.Log("killed" + killedEnemy);
-          
+            killedEnemy++;           
         }
     }  
 }

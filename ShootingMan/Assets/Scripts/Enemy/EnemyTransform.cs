@@ -20,7 +20,7 @@ public class EnemyTransform : MonoBehaviour
     {
         EnemyTransform result = null;
         float dist = float.PositiveInfinity;
-        var e = EnemyTransform.Pool.GetEnumerator();
+        var e = Pool.GetEnumerator();
         while (e.MoveNext())
         {
             float d = (e.Current.transform.position - pos).sqrMagnitude;

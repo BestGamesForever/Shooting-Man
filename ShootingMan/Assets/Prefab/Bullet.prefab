@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 5461045300229042341}
   - component: {fileID: 6244388717359587301}
   - component: {fileID: 6244388717359587302}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6244388717359587303}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.08148904, y: -0.07426795, z: 0.006089262, w: 0.9938847}
   m_LocalPosition: {x: 0.388, y: 0.986, z: 23.48}
   m_LocalScale: {x: 0.32642552, y: 0.32642552, z: 0.32642552}
   m_Children: []
@@ -93,6 +93,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletData: {fileID: 11400000, guid: c2c5446dd6a933e4babbfb993ab1c9a0, type: 2}
+  _events: {fileID: 6945576755202959427, guid: 086f934e53c99a7428f74e54f30aaa74, type: 3}
+  EnemyOBJ: {fileID: 2577499783704526788, guid: b4d64d4b0f312834bb13cda3cbe9f3d9,
+    type: 3}
 --- !u!135 &6244388717359587301
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -120,5 +123,5 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 1

@@ -34,10 +34,8 @@ public class PlayerTransform : MonoBehaviour
     {
         var nearestEnemy = EnemyTransform.FindClosestEnemy(transform.position); 
         if (nearestEnemy!=null)
-        {
-       //  Debug.Log(nearestEnemy.name);            
-        transform.LookAt(nearestEnemy.transform);
-           
+        {           
+        transform.LookAt(nearestEnemy.transform);           
         }                                                             
       
     }
